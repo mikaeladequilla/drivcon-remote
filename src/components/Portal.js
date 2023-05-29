@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/database';
-import logo from '../drivcon_logo.png';
+import logo from '../drivcon_icon.png';
 import '../App.css';
 
 const firebaseConfig = {
@@ -243,7 +243,7 @@ function Portal() {
       {selectedRow ? (
           <>
             <div className='other-text'>
-              <p></p>
+              <p>Bed Number: {selectedRow.bed_number}</p>
               <p className='infusing'>Infusing</p>
               <p className='Fluid-type'>{selectedRow.fluid_type}</p>
             </div>
