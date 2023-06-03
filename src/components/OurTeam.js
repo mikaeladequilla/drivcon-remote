@@ -48,7 +48,7 @@ function OurTeam() {
                             <div className='team-images-box'>
                                 <img src={mandia} alt='Edilberto Mandia, Jr.' className='team-icon'/>
                                 <h3>Edilberto Mandia, Jr.</h3>
-                                <p className='team-text2'>Some text...</p>
+                                <p className='team-text2'>Responsible for hardware development primarily involves designing and implementing various components, such as sensors and cabling, to enhance system functionality. Contribute to the documentation process and aids in conducting experiments and tests for system development.</p>
                             </div>
                             <div className='team-images-track'>
                                 <p>Embedded Systems</p>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import { Link, useNavigate } from 'react-router-dom';
@@ -21,6 +21,18 @@ const Login = ({ onLogin }) => {
     const [loginPassword, setLoginPassword] = useState('');
     const [loginError, setLoginError] = useState('');
     const navigate = useNavigate();
+
+    useEffect(() => {
+        const unsubscribe = firebase.auth().onAuthStateChanged(user => {
+            if (user) {
+                onLogin(); // Update parent component
+                navigate('/portal'); // Navigate to portal
+            }
+        });
+
+        // Clean up subscription on unmount
+        return () => unsubscribe();
+    }, [navigate, onLogin]);
 
     const handleLoginEmailChange = (e) => {
         setLoginEmail(e.target.value);

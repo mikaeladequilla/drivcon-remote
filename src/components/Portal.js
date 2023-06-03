@@ -1,6 +1,6 @@
 import { Button, Modal, FormControl } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/database';
 import logo from '../drivcon_icon.png';
@@ -158,6 +158,20 @@ function Portal() {
     return null;
   };
 
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    firebase.auth().signOut()
+        .then(() => {
+            // Sign-out successful.
+            navigate("/login");
+        })
+        .catch((error) => {
+            // An error happened.
+            console.error(error);
+        });
+};
+
   const filterInfusions = (infusion) => {
     if (!searchQuery) return true;
 
@@ -182,9 +196,7 @@ function Portal() {
           <Link to="/">
               <img src={logo} className="App-logo" alt="logo" />
           </Link>
-          <Link to="/login">
-              <Button className='logout-button'>SIGN OUT</Button>
-          </Link>
+          <Button className='logout-button' onClick={handleLogout}>SIGN OUT</Button>
         </div>
         <p>Infusion Monitoring Portal</p>
         <div className='App-control'>
