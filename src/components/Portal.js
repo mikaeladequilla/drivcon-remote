@@ -146,6 +146,7 @@ function Portal() {
     }
     setShowModal(false);
     setModalMessage("");
+    setWarningType({ airInLine: false, blood: false }); // Reset warningType
   };
 
   const getAlertImage = (message) => {
