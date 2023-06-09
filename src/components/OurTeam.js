@@ -38,7 +38,7 @@ function OurTeam() {
                             <div className='team-images-box'>
                                 <img src={dequilla} alt='Mikaela Dequilla' className='team-icon'/>
                                 <h3>Mikaela Dequilla</h3>
-                                <p className='team-text2'>Integrating a remote monitoring system for an infusion pump, incorporated it into hardware functionality. Utilized AutoCAD for precise 3D modeling for comprehensive architecture visualization and developed a user-friendly interface with ReactJS and Figma. Made substantial contributions to design planning, documentation, and calibration.</p>
+                                <p className='team-text2'>Integrated a remote monitoring system for the infusion pump, and assisted on hardware functionality. Utilized AutoCAD for precise 3D modeling for comprehensive architecture visualization and developed a front-end with ReactJS and Figma. Made contributions to design planning, documentation, and calibration.</p>
                             </div>
                             <div className='team-images-track'>
                                 <p>System Administration</p>
@@ -48,7 +48,7 @@ function OurTeam() {
                             <div className='team-images-box'>
                                 <img src={mandia} alt='Edilberto Mandia, Jr.' className='team-icon'/>
                                 <h3>Edilberto Mandia, Jr.</h3>
-                                <p className='team-text2'>Some text...</p>
+                                <p className='team-text2'>Responsible for hardware development primarily involves designing and implementing various components, such as sensors and cabling, to enhance system functionality. Contributed to the documentation process and aids in conducting experiments and tests for system development.</p>
                             </div>
                             <div className='team-images-track'>
                                 <p>Embedded Systems</p>

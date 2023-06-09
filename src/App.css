@@ -9,6 +9,8 @@
   display: flex;
   flex-direction: row;
   font-family: 'Inter', sans-serif;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .App-logo {
@@ -18,7 +20,7 @@
 .App-header {
   width: 100%;
   padding: 40px;
-  background-color: #FFFBF0;
+  background-color: #F9FBFC;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -43,7 +45,7 @@
 .App-search {
   height: 40px;
   width: 252px;
-  background-color: #FFFBF0;
+  background-color: #F9FBFC;
   border: #F8BC24 1px solid;
   border-radius: 5px;
   padding-left: 20px;
@@ -54,7 +56,7 @@
 .Remove-button {
   height: 42px;
   width: 100px;
-  background-color: #FFFBF0;
+  background-color: #F9FBFC;
   border: 1.5px solid #c03a00;
   border-radius: 5px;
   font-family: 'Poppins', sans-serif;
@@ -144,15 +146,25 @@
   justify-content: space-between;
 }
 
+.alert-card.first-alert-card {
+  margin-right: 20px;
+}
+
+.alert-card p {
+  margin: 0;
+}
+
 .alert-card {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin: 20px;
-  height: 250px;
-  background-color: #FEECBA;
+  margin-bottom: 50px;
+  padding: 20px 30px;
+  height: 80px;
+  background-color: #FFFFFF;
+  box-shadow:  0px 5px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   color: #1E1E1E;
   font-family: 'Signika Negative', sans-serif;
@@ -163,35 +175,39 @@
 .alert-ind {
   margin: none;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   color: #00E809;
-}
-
-.circle {
-  width: 8px;
-  height: 8px;
-  border-radius: 8px;
-  background-color: #00E809;
 }
 
 .normal-text {
   color: #00E809;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.alert-text {
+  color: #1E1E1E;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
 }
 
 .warning-text {
   color: #D9160A;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
 }
 
-.normal-circle {
-  background-color: #00E809;
+.warning-img {
+  border: solid 3px #D9160A;
+  border-radius: 100px;
 }
 
-.warning-circle {
-  background-color: #D9160A;
-}
-
-.alert-card img {
-  margin-bottom: 30px;
+.normal-img {
+  border: solid 3px #00E809;
+  border-radius: 100px;
 }
 
 /* Other section */
@@ -218,6 +234,21 @@
   background-color: #FEECBA;
   color: #464646;
   font-weight: 600;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.section p {
+  margin: 0;
+}
+
+.bed-number {
+  color: #464646;
+  font-weight: 400;
+  font-size: 16px;
+  padding-bottom: 25px;
 }
 
 .Fluid-type {
@@ -228,7 +259,8 @@
 }
 
 .infusing {
-  color: #00E809;
+  color: #00B2EB;
+  font-weight: 400;
 }
 
 .Flow-rate {
@@ -249,7 +281,7 @@
 
 .flowrate-data {
   font-size: 100px;
-  color: #00B2EB;
+  color: #14213D;
   margin: 0;
 }
 
@@ -275,13 +307,15 @@
   max-width: 400px;
   margin: auto;
   padding: 30px;
-  background-color: #FFFBF0;
-  border: 0.5px solid #464646;
-  border-radius: 10px;
-  position: absolute;
+  background-color: #FFFFFF;
+  box-shadow:  0px 8px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  position: fixed;
+  z-index: 10000;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 10000;
 }
 
 .modal-body {
@@ -290,9 +324,15 @@
   white-space: pre-wrap;
   text-align: center;
   margin: 30px;
-  color: #F8BC24;
-  font-family: 'Signika Negative', sans-serif;
+  color: #1E1E1E;
+  font-family: 'Inter', sans-serif;
   align-items: center;
+}
+
+.warning-modal {
+  color: #D9160A;
+  font-weight: 700;
+  font-size: 20px;
 }
 
 .modal-body img {
@@ -314,6 +354,16 @@
   border-radius: 10px;
   font-weight: 600;
   font-family: 'Signika Negative', sans-serif;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Adjust the opacity as needed */
+  z-index: 9999; /* Adjust the z-index value to ensure the overlay is on top */
 }
 
 /* Home Page */
@@ -506,6 +556,11 @@ footer {
 }
 
 /* Login Page */
+
+.Auth {
+  height: 100vh;
+  overflow: hidden;
+}
 
 .authBG {
   background-image: url("login&register-bg.png");

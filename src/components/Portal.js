@@ -187,6 +187,22 @@ function Portal() {
           </Link>
         </div>
         <p>Infusion Monitoring Portal</p>
+        <div className='alert-container'>
+          <div className='alert-card first-alert-card'>
+            <div className={`alert-ind ${warningType.airInLine ? 'warning-text' : 'normal-text'}`}>
+              <p>{warningType.airInLine ? 'Bubble detected' : 'Normal'}</p>
+              <p className='alert-text'>Air-in-line</p>
+            </div>
+            <img src='/icons/icon-bubbles.png' alt='bubbles' className={`alert-ind ${warningType.airInLine ? 'warning-img' : 'normal-img'}`}></img>
+          </div>
+          <div className='alert-card'>
+            <div className={`alert-ind ${warningType.blood ? 'warning-text' : 'normal-text'}`}>
+              <p>{warningType.blood ? `Blood detected` : 'Normal'}</p>
+              <p className='alert-text'>Reverse blood flow</p>
+            </div>
+            <img src='/icons/icon-blood.png' alt='blood' className={`alert-ind ${warningType.blood ? 'warning-img' : 'normal-img'}`}></img>
+          </div>
+        </div>
         <div className='App-control'>
           <FormControl className='App-search'
             placeholder='Search'
@@ -218,32 +234,13 @@ function Portal() {
           </div>
           )}
         </div>
-        <p>Alerts</p>
-        <div className='alert-container'>
-        <div className='alert-card'>
-          <div className={`alert-ind ${warningType.airInLine ? 'warning-text' : 'normal-text'}`}>
-            <p>{warningType.airInLine ? 'Bubble detected' : 'Normal'}</p>
-            <div className={`circle ${warningType.airInLine ? 'warning-circle' : 'normal-circle'}`}></div>
-          </div>
-          <img src='/icons/icon-bubbles.png' alt='bubbles'></img>
-          <p>Air-in-line</p>
-        </div>
-        <div className='alert-card'>
-          <div className={`alert-ind ${warningType.blood ? 'warning-text' : 'normal-text'}`}>
-            <p>{warningType.blood ? `Blood detected` : 'Normal'}</p>
-            <div className={`circle ${warningType.blood ? 'warning-circle' : 'normal-circle'}`}></div>
-          </div>
-          <img src='/icons/icon-blood.png' alt='blood'></img>
-          <p>Reverse blood flow</p>
-        </div>
-        </div>
       </header>
 
       <div className='section'>
       {selectedRow ? (
           <>
             <div className='other-text'>
-              <p>Bed Number: {selectedRow.bed_number}</p>
+              <p className='bed-number'>Bed Number: {selectedRow.bed_number}</p>
               <p className='infusing'>Infusing</p>
               <p className='Fluid-type'>{selectedRow.fluid_type}</p>
             </div>
@@ -281,12 +278,15 @@ function Portal() {
         </div>
         )}
       </div>
+      <div className={showModal ? 'overlay' : ''}></div> {/* Add the overlay div */}
       <Modal show={showModal} onHide={() => setShowModal(false)} className='modal-container'>
         <Modal.Body>
           {getAlertImage(modalMessage) && (
-              <img src={getAlertImage(modalMessage)} alt='alert' />
-            )}
-          {JSON.stringify(modalMessage)}</Modal.Body>
+            <img src={getAlertImage(modalMessage)} alt='alert' />
+          )}
+            <p className='warning-modal'>WARNING!</p>
+            {JSON.stringify(modalMessage)}
+        </Modal.Body>
         <Modal.Footer>
           <Button onClick={handleCloseModal}>Okay</Button>
         </Modal.Footer>
