@@ -12,6 +12,7 @@ const firebaseConfig = {
     // ... other Firebase configurations
 };
 
+// Initialize Firebase if not already initialized
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
 }
@@ -23,6 +24,7 @@ const Register = () => {
     const [signupPassword, setSignupPassword] = useState('');
     const navigate = useNavigate();
 
+    // Handle chages in form fields
     const handleSignupFNameChange = (e) => {
         setSignupFName(e.target.value);
     }
@@ -37,39 +39,40 @@ const Register = () => {
 
     const handleSignupPasswordChange = (e) => {
         const input = e.target.value;
-        if (/^\d{0,6}$/.test(input)) {
+        if (/^\d{0,6}$/.test(input)) { // Check if input is a number with max 6 digits
             setSignupPassword(input);
         }
     };
 
     const handleKeyPress = (e) => {
         const charCode = e.which ? e.which : e.keyCode;
+        // Prevent non-digit character input
         if (charCode < 48 || charCode > 57) {
           e.preventDefault();
         }
       };
 
-    const handleSignUp = (e) => {
-        e.preventDefault();
+      const handleSignUp = (e) => {
+        e.preventDefault(); // Prevent the form from reloading the page
         firebase
-        .auth()
-        .createUserWithEmailAndPassword(signupEmail, signupPassword)
+        .auth() // Get the Firebase authentication service
+        .createUserWithEmailAndPassword(signupEmail, signupPassword) // Create a new user with the provided email and password
         .then((userCredential) => {
-            // Handle successful sign-up
-            const user = userCredential.user;
-            console.log('Signed up:', user);
-
-            // Update user's display name with the combined first and last name
+            // This block is executed when the user is successfully created
+            const user = userCredential.user; // The user's data
+            console.log('Signed up:', user); // Log the user's data to the console
+    
+            // Update the user's display name with the entered first and last names
             user.updateProfile({
                 displayName: signupFName + ' ' + signupLName,
           });
-
-            // Navigate to the portal
+    
+            // Navigate to the login page
             navigate('/login');
         })
         .catch((error) => {
-            // Handle sign-up error
-            console.error(error);
+            // This block is executed if there's an error creating the user
+            console.error(error); // Log the error to the console
         });
     };
 
