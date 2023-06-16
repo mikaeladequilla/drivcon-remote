@@ -279,6 +279,10 @@
   align-items: baseline;
 }
 
+.section.hidden {
+  display: none;
+}
+
 .flowrate-data {
   font-size: 100px;
   color: #14213D;

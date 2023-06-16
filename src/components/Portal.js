@@ -249,9 +249,8 @@ function Portal() {
         </div>
       </header>
 
+      {selectedRow && (
       <div className='section'>
-      {selectedRow ? (
-          <>
             <div className='other-text'>
               <p className='bed-number'>Bed Number: {selectedRow.bed_number}</p>
               <p className='infusing'>Infusing</p>
@@ -283,14 +282,12 @@ function Portal() {
                 <p className='below-text'>Total Time</p>
               </div>
             </div>
-          </>
-      ) : (
-        <div className='no-selected'>
-          <img src='/icons/icon-select.png' alt='select-icon' className='select'></img>
-          <p>Select data to display</p>
-        </div>
+      )
+      {!selectedRow && (
+      <div className='section hide'></div>
         )}
       </div>
+      )};
       <div className={showModal ? 'overlay' : ''}></div> {/* Add the overlay div */}
       <Modal show={showModal} onHide={() => setShowModal(false)} className='modal-container'>
         <Modal.Body>

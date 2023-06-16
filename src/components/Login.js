@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import { Link, useNavigate } from 'react-router-dom';
+import logo from '../drivcon_logo.png';
+import whiteLogo from '../drivcon_white.png';
 
 // Firebase configuration for your application
 const firebaseConfig = {
