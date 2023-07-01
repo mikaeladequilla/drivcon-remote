@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/drivcon-remote/static/css/main.08319901.css",
-    "main.js": "/drivcon-remote/static/js/main.de844d45.js",
+    "main.js": "/drivcon-remote/static/js/main.2b64b9c3.js",
     "static/js/787.c1975a1e.chunk.js": "/drivcon-remote/static/js/787.c1975a1e.chunk.js",
     "static/media/login&register-bg.png": "/drivcon-remote/static/media/login&register-bg.0245ff54606bf535c5f3.png",
     "static/media/nurse.png": "/drivcon-remote/static/media/nurse.a0941539692cb864fedb.png",
@@ -12,11 +12,11 @@
     "static/media/dev-cabellon.jpg": "/drivcon-remote/static/media/dev-cabellon.c23012806fea07ae563b.jpg",
     "index.html": "/drivcon-remote/index.html",
     "main.08319901.css.map": "/drivcon-remote/static/css/main.08319901.css.map",
-    "main.de844d45.js.map": "/drivcon-remote/static/js/main.de844d45.js.map",
+    "main.2b64b9c3.js.map": "/drivcon-remote/static/js/main.2b64b9c3.js.map",
     "787.c1975a1e.chunk.js.map": "/drivcon-remote/static/js/787.c1975a1e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.08319901.css",
-    "static/js/main.de844d45.js"
+    "static/js/main.2b64b9c3.js"
   ]
 }
