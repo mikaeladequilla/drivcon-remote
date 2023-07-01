@@ -81,7 +81,7 @@ const Login = ({ onLogin }) => {
         <div className='Auth'>
             <div className='authFormContainer'>
             <p className='authText'>WELCOME TO</p>
-                <img src={logo} className='logoAuth'></img>
+                <img src={logo} className='logoAuth' alt='logo'></img>
                 <p className='authText2'>Login to get updates and monitor every patient's IV fluid status.</p>
                 <form onSubmit={handleLogin}>
                     <div>
